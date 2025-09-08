@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:studentsdb;DB_CLOSE_DELAY=-1;MODE=MySQL
+    username: root
+    password: nilesh
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+app:
+  messages:
+    created: Student created successfully
+    fetched: Student fetched successfully
+    list_fetched: Students fetched successfully
+    age_updated: Student age computed and updated
+    age_range: Students in age range fetched
+
