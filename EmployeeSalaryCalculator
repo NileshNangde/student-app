@@ -1,0 +1,36 @@
+public class EmployeeSalaryCalculator {
+	
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter hourly rate: ");
+        double hourlyRate = sc.nextDouble();
+
+        System.out.print("Enter hours worked per week: ");
+        double hoursWorked = sc.nextDouble();
+
+        
+        double weeklySalary;
+        if (hoursWorked <= 40) {
+            weeklySalary = hoursWorked * hourlyRate;
+        } else {
+            double regularPay = 40 * hourlyRate;
+            double overtimePay = (hoursWorked - 40) * (hourlyRate * 1.5);
+            weeklySalary = regularPay + overtimePay;
+        }
+
+        
+        double monthlySalary = weeklySalary * 4;
+
+        // Tax deduction (10%)
+        double tax = monthlySalary * 0.10;
+        double netSalary = monthlySalary - tax;
+
+        
+        System.out.println("Gross Monthly Salary (before tax): " + monthlySalary);
+        System.out.println("Tax Deducted (10%): " + tax);
+        System.out.println("Net Monthly Salary (after tax): " + netSalary);
+
+        
+    }
+}
